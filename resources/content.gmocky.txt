@@ -1,0 +1,4 @@
+{
+  "error": "UNAUTHORIZED",
+  "message": "Wrong 'X-AUTH-ISSUER'...@see documentation for more details!"
+}

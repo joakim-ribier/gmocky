@@ -1,0 +1,10 @@
+{
+    "status": 403,
+    "contentType": "application/json",
+    "charset": "utf-8",
+    "headers": {
+        "X-AUTH-TOKEN": "{token}",
+        "X-AUTH-ISSUER": "GMOCKY"
+    },
+    "delay": "3s"
+}
