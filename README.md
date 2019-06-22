@@ -13,7 +13,7 @@
 
 ## Description
 
-GMOCKY is a fork of mocky.io but with a [Go](https://golang.org/) server.
+GMOCKY is a fork of [mocky.io](https://www.mocky.io/) but with a [Go](https://golang.org/) server.
 
 Thanks to [Julien Lafont](https://github.com/julien-lafont/Mocky) for mocky.io :p
 
@@ -70,6 +70,20 @@ $ ./gmocky
 
 ## Docker
 
+1. Use the remote container
+
+The container is free on [Docker Hub](https://hub.docker.com/r/joakimribier/gmocky).
+
+```bash
+# Pull the container
+$ docker pull joakimribier/gmocky
+
+# Run the container
+docker run -d -p 8585:8585 joakimribier/gmocky
+```
+
+2. Build & run local container
+
 ```bash
 # Build the docker image
 $ cd $HOME/go/src/gmocky
@@ -77,10 +91,10 @@ $ docker build -t gmocky .
 
 # Run
 $ docker run -d -p 8585:8585 gmocky
-
-# Test
-http://localhost:8585/?gmocky-content...
 ```
+
+& test the container on
+http://localhost:8585/?gmocky-content...
 
 ## Troubleshooting
 
