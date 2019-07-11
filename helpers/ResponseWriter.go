@@ -2,6 +2,7 @@ package helpers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -24,7 +25,6 @@ func NewResponseWriter(w http.ResponseWriter, r *http.Request) ResponseWriter {
 }
 
 func (h ResponseWriter) writeResponse(config models.Config) {
-	h.writer.Header().Set("X-Content-Type-Options", "nosniff")
 	for key, value := range config.Headers {
 		h.writer.Header().Set(key, value)
 	}
@@ -63,6 +63,10 @@ func (h ResponseWriter) Write() {
 		return
 	}
 
+	fmt.Printf("%s - %s\n\r",
+		time.Now().Format(time.RFC3339),
+		h.request.URL)
+
 	h.writeResponse(data)
 	h.timeout()
 }
@@ -78,7 +82,7 @@ func (h ResponseWriter) timeout() {
 }
 
 func (h ResponseWriter) writeBadRequest(message string) {
-	h.writer.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	h.writer.Header().Set("Content-Type", "application/json; charset=utf-8")
 	h.writer.Header().Set("X-Content-Type-Options", "nosniff")
 
 	h.writer.WriteHeader(400)

@@ -30,7 +30,7 @@ func main() {
 }
 
 func start() {
-	fmt.Println("# Server waiting on :" + port + "...")
+	fmt.Printf("# Server waiting on :%s...\n\r", port)
 	http.HandleFunc(utils.HandlerPattern, func(w http.ResponseWriter, r *http.Request) {
 		helpers.NewResponseWriter(w, r).Write()
 	})
