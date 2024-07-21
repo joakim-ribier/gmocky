@@ -1,3 +1,5 @@
+_This project is replaced by https://github.com/joakim-ribier/gmocky-v2_
+
 # GMOCKY - Generate custom HTTP responses
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/joakim-ribier/gmocky)](https://goreportcard.com/report/github.com/joakim-ribier/gmocky)
